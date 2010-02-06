@@ -135,6 +135,7 @@ vtkKochanekSpline.cxx
 vtkLine.cxx
 vtkLocator.cxx
 vtkMapper2D.cxx
+vtkMeanValueCoordinatesInterpolator.cxx
 vtkMergePoints.cxx
 vtkModifiedBSPTree.cxx
 vtkMultiBlockDataSetAlgorithm.cxx
@@ -168,6 +169,7 @@ vtkPolyData.cxx
 vtkPolyDataSource.cxx
 vtkPolyDataToPolyDataFilter.cxx
 vtkPolygon.cxx
+vtkPolyhedron.cxx
 vtkPolyLine.cxx
 vtkPolyVertex.cxx
 vtkProcessObject.cxx
