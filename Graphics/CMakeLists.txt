@@ -175,6 +175,7 @@ vtkPolyDataNormals.cxx
 vtkPolyDataPointSampler.cxx
 vtkPolyDataStreamer.cxx
 vtkProbeFilter.cxx
+vtkProbePolyhedron.cxx
 vtkProbeSelectedLocations.cxx
 vtkProgrammableAttributeDataFilter.cxx
 vtkProgrammableDataObjectSource.cxx
