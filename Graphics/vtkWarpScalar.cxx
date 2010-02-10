@@ -27,6 +27,7 @@
 vtkCxxRevisionMacro(vtkWarpScalar, "$Revision$");
 vtkStandardNewMacro(vtkWarpScalar);
 
+//----------------------------------------------------------------------------
 vtkWarpScalar::vtkWarpScalar()
 {
   this->ScaleFactor = 1.0;
@@ -41,21 +42,25 @@ vtkWarpScalar::vtkWarpScalar()
                                vtkDataSetAttributes::SCALARS);
 }
 
+//----------------------------------------------------------------------------
 vtkWarpScalar::~vtkWarpScalar()
 {
 }
 
+//----------------------------------------------------------------------------
 double *vtkWarpScalar::DataNormal(vtkIdType id, vtkDataArray *normals)
 {
   return normals->GetTuple(id);
 }
 
+//----------------------------------------------------------------------------
 double *vtkWarpScalar::InstanceNormal(vtkIdType vtkNotUsed(id), 
                                      vtkDataArray *vtkNotUsed(normals))
 {
   return this->Normal;
 }
 
+//----------------------------------------------------------------------------
 double *vtkWarpScalar::ZNormal(vtkIdType vtkNotUsed(id), 
                               vtkDataArray *vtkNotUsed(normals))
 {
@@ -63,6 +68,7 @@ double *vtkWarpScalar::ZNormal(vtkIdType vtkNotUsed(id),
   return zNormal;
 }
 
+//----------------------------------------------------------------------------
 int vtkWarpScalar::RequestData(
   vtkInformation *vtkNotUsed(request),
   vtkInformationVector **inputVector,
@@ -167,6 +173,7 @@ int vtkWarpScalar::RequestData(
   return 1;
 }
 
+//----------------------------------------------------------------------------
 void vtkWarpScalar::PrintSelf(ostream& os, vtkIndent indent)
 {
   this->Superclass::PrintSelf(os,indent);
