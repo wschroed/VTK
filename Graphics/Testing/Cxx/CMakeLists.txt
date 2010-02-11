@@ -24,6 +24,8 @@ IF (VTK_USE_RENDERING AND VTK_USE_DISPLAY)
     TestHyperOctreeSurfaceFilter.cxx
     TestHyperOctreeToUniformGrid.cxx
     TestMeanValueCoordinatesInterpolation.cxx
+    TestMeanValueCoordinatesInterpolation1.cxx
+    TestMeanValueCoordinatesInterpolation2.cxx
     TestPolyDataPointSampler.cxx
     TestSelectEnclosedPoints.cxx
     TestTessellator.cxx
