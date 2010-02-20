@@ -12,7 +12,7 @@
      PURPOSE.  See the above copyright notice for more information.
 
 =========================================================================*/
-#include "vtkExtractGeometry.h"
+#include "vtkExtractPolyhedralMesh.h"
 
 #include "vtkCell.h"
 #include "vtkCellData.h"
@@ -25,13 +25,13 @@
 #include "vtkPointData.h"
 #include "vtkUnstructuredGrid.h"
 
-vtkCxxRevisionMacro(vtkExtractGeometry, "$Revision$");
-vtkStandardNewMacro(vtkExtractGeometry);
-vtkCxxSetObjectMacro(vtkExtractGeometry,ImplicitFunction,vtkImplicitFunction);
+vtkCxxRevisionMacro(vtkExtractPolyhedralMesh, "$Revision$");
+vtkStandardNewMacro(vtkExtractPolyhedralMesh);
+vtkCxxSetObjectMacro(vtkExtractPolyhedralMesh,ImplicitFunction,vtkImplicitFunction);
 
 //----------------------------------------------------------------------------
 // Construct object with ExtractInside turned on.
-vtkExtractGeometry::vtkExtractGeometry(vtkImplicitFunction *f)
+vtkExtractPolyhedralMesh::vtkExtractPolyhedralMesh(vtkImplicitFunction *f)
 {
   this->ImplicitFunction = f;
   if (this->ImplicitFunction)
@@ -45,14 +45,14 @@ vtkExtractGeometry::vtkExtractGeometry(vtkImplicitFunction *f)
 }
 
 //----------------------------------------------------------------------------
-vtkExtractGeometry::~vtkExtractGeometry()
+vtkExtractPolyhedralMesh::~vtkExtractPolyhedralMesh()
 {
   this->SetImplicitFunction(NULL);
 }
 
 // Overload standard modified time function. If implicit function is modified,
 // then this object is modified as well.
-unsigned long vtkExtractGeometry::GetMTime()
+unsigned long vtkExtractPolyhedralMesh::GetMTime()
 {
   unsigned long mTime=this->MTime.GetMTime();
   unsigned long impFuncMTime;
@@ -67,7 +67,7 @@ unsigned long vtkExtractGeometry::GetMTime()
 }
 
 //----------------------------------------------------------------------------
-int vtkExtractGeometry::RequestData(
+int vtkExtractPolyhedralMesh::RequestData(
   vtkInformation *vtkNotUsed(request),
   vtkInformationVector **inputVector,
   vtkInformationVector *outputVector)
@@ -276,14 +276,14 @@ int vtkExtractGeometry::RequestData(
 }
 
 //----------------------------------------------------------------------------
-int vtkExtractGeometry::FillInputPortInformation(int, vtkInformation *info)
+int vtkExtractPolyhedralMesh::FillInputPortInformation(int, vtkInformation *info)
 {
   info->Set(vtkAlgorithm::INPUT_REQUIRED_DATA_TYPE(), "vtkDataSet");
   return 1;
 }
 
 //----------------------------------------------------------------------------
-void vtkExtractGeometry::PrintSelf(ostream& os, vtkIndent indent)
+void vtkExtractPolyhedralMesh::PrintSelf(ostream& os, vtkIndent indent)
 {
   this->Superclass::PrintSelf(os,indent);
 

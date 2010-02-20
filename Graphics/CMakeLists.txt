@@ -84,6 +84,7 @@ vtkExtractGeometry.cxx
 vtkExtractGrid.cxx
 vtkExtractLevel.cxx
 vtkExtractPolyDataGeometry.cxx
+vtkExtractPolyhedralMesh.cxx
 vtkExtractRectilinearGrid.cxx
 vtkExtractSelectedBlock.cxx
 vtkExtractSelectedFrustum.cxx
